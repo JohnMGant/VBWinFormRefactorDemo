@@ -78,7 +78,10 @@ private void GadgetsView_Load(object sender, EventArgs e)
         Moods = ["happy", "cheerful", "brave", "silly"]
     }];            
     IEnumerable<Gadget> records = repository.Search(criteria);
-    dataGridView1.DataSource = records.Select(g => new { ID = g.GadgetId, g.Name, g.InitialDate, g.Mood }).ToList();
+    dataGridView1.DataSource =
+        records
+        .Select(g => new { ID = g.GadgetId, g.Name, g.InitialDate, g.Mood })
+        .ToList();
 }
 ```
 
@@ -89,7 +92,7 @@ commonly used in object-oriented programming.
 
 In our blodget example, access to the database is provided by a data access module.
 This module exists for the lifetime of the application
-and cannot realisticaly be subjected to any automated tests,
+and cannot realistically be subjected to any automated tests,
 nor can it be replaced with a mock version
 to enable testing of components that use it.
 
@@ -104,7 +107,7 @@ This is useful for testing, as will be discussed later.
 In object-oriented programming, an interface is sometimes thought of
 as an abstract definition of a real-world entity.
 But it can also be useful to think of it as a contract.
-A class that implements `IGadgetRepository` stipulates
+A class that implements `IGadgetRepository` promises
 that it will implement all of the methods that `IGadgetRepository` requires.
 
 In our example above, the specific method we're expecting
