@@ -10,7 +10,7 @@ Each form displays a grid containing items read from a database.
 While they look similar on the outside,
 they work very differently from one another on the inside.
 
-The items we're working with are knows as widgets, gadgets, and blodgets.
+The items we're working with are as widgets, gadgets, and blodgets.
 
 # Base case - Blodgets
 
